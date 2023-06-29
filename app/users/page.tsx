@@ -1,6 +1,7 @@
 import getAllUsers from "@/lib/getAllUsers"
 import Link from "next/link";
 export default async function UsersPage() {
+
     const usersData: Promise<Users[]> = getAllUsers();
     const users = await usersData;
 
@@ -16,7 +17,7 @@ export default async function UsersPage() {
                         return (
                             <>
                                 <p key={users.id} className="m-2 bg-blue-200 px-5 py-4">
-                                    <Link href={`/users/${users.id}`}>
+                                    <Link href={`/users/${users.id}`} className="bg-red hover:blue rounded px-4 py-6">
                                         Users : {users.name}
                                     </Link>
                                 </p>
